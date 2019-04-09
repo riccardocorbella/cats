@@ -40,6 +40,7 @@ crossScalaVersionsFromTravis in Global := {
 
 lazy val commonSettings = Seq(
   crossScalaVersions := (crossScalaVersionsFromTravis in Global).value,
+  hydraWorkers := 2,
   scalacOptions ++= commonScalacOptions(scalaVersion.value),
   Compile / unmanagedSourceDirectories ++= {
     val bd = baseDirectory.value
